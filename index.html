@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bookstore</title>
+</head>
+<body>
+    <h2>Add New Book</h2>
+    <form action="insert.php" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+        
+        <label for="published_year">Published Year:</label>
+        <input type="number" id="published_year" name="published_year" required>
+        
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Add a section for searching books by ID -->
+    <h2>Search Book by ID</h2>
+    <form action="search_books.php" method="get">
+        <label for="search_book_id">Book ID:</label>
+        <input type="number" id="search_book_id" name="search_book_id" required>
+        <button type="submit">Search</button>
+    </form>
+
+
+    <h2>Delete Book by ID</h2>
+    <form action="delete_book.php" method="post">
+        <label for="delete_book_id">Book ID:</label>
+        <input type="number" id="delete_book_id" name="delete_book_id" required>
+        <button type="submit">Delete Book</button>
+    </form>
+
+
+
+   <!-- Add a section for updating books by ID -->
+<h2>Update Book by ID</h2>
+<form action="update_book.php" method="post">
+    <label for="update_book_id">Book ID:</label>
+    <input type="number" id="update_book_id" name="update_book_id" required>
+
+    <h3>Enter updated values:</h3>
+
+    <label for="new_title">New Title:</label>
+    <input type="text" id="new_title" name="new_title">
+
+    <label for="new_author">New Author:</label>
+    <input type="text" id="new_author" name="new_author">
+
+    <label for="new_published_year">New Published Year:</label>
+    <input type="number" id="new_published_year" name="new_published_year">
+
+    <button type="submit">Update Book</button>
+</form>
+
+
+    <?php include 'display_books.php'; ?>
+
+    <h2>Display All Books</h2>
+    <form action="display_books.php" method="get">
+        <button type="submit">Display Books</button>
+    </form>
+</body>
+</html>
